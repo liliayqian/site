@@ -1,0 +1,162 @@
+html {
+	min-height: 100%;
+ }
+
+body {
+	background-image: url(../img/cloudy8.jpg);
+	min-width: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin: 0 auto;
+	max-width: 30em;
+}
+
+@supports (display: grid) {
+	body{
+		margin: 0;
+		max-width: inherit;
+	}
+}
+
+main{
+	position: relative;
+	top: 10em;
+	margin: 0;
+	min-height: 100vh;
+}
+
+/*navigation links*/
+nav li a{
+	text-decoration: none;
+  	background: linear-gradient(to right, #FFDE0C, #FFDE0C 50%, black 50%);
+	background-clip: text;
+	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
+  	background-size: 200% 100%;
+  	background-position: 100%;
+  	transition: background-position 275ms ease;
+}
+
+nav li a:hover{
+	background-position: 0 100%;
+}
+
+/*mobile*/
+@media (min-width: 0em) {
+	/*navigation*/
+	nav{
+	z-index: 1;
+	background-color: #FBFBFB;
+	}
+
+	.title a {
+	  background-image: linear-gradient(to right, rgba(255,255,255,0) 50%, #FFDE0C 50%);
+	  background-position: -5% 0;
+	  background-size: 200% auto;
+	  color: #fff;
+	  font-size: 1.25em;
+	  line-height: 1.15em;
+	  text-decoration: none;
+	  transition: background-position 0.5s ease-out;
+	}
+
+	/*profile*/
+	.profile{
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		grid-column-gap: 2.5%;
+	}
+	
+	.icon{
+		max-width: 50%;
+		margin: auto;
+	}
+
+	.about{
+		margin: 15px;
+	}
+
+	.about p, h1{
+		text-align: center;
+	}
+
+/*medium width*/
+@media (min-width: 35em) {
+	.profile {
+		grid-template-columns: repeat(4, 1fr);
+	}
+	.profile a{
+		color: black;
+		font-weight: bold;
+	}
+	.profile a:hover {
+		text-decoration: none;
+		opacity: 0.3;
+	}
+	.icon{
+		max-width: 110%;
+		grid-column-start: 2;
+	}
+	.about{
+		grid-column: 3 / 4;
+		margin: 25px;
+	}
+	.about p{
+		border-right: 7px solid;
+		border-color: #FFDE0C;
+		text-align: right;
+		padding-right: 10px;
+	}
+	.typewriter h1 {
+		font-size: 3em;
+		color: black;
+		line-height: 2.3em;
+
+		padding-right: 10px;
+		overflow: hidden; /* Ensures the content is not revealed until the animation */
+		border-right: 7px solid #FFDE0C; /* The typwriter cursor */
+		white-space: nowrap; /* Keeps the content on a single line */
+		margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+		letter-spacing: .03em; /* Adjust as needed */
+		animation: 
+	    typing 2.7s steps(30, end),
+	    blink-caret .5s step-end 7;
+	}
+	/* The typing effect */
+	@keyframes typing {
+	  from { width: 0 }
+	  to { width: 100% }
+	}
+	/* The typewriter cursor effect */
+	@keyframes blink-caret {
+	  from, to { border-color: transparent }
+	  50% { border-color: #FFDE0C }
+	}
+
+/*large screens*/
+@media screen and (min-width: 80em) {
+	/*navigation*/
+	nav{
+		background-color: transparent;
+	}
+	
+	.title a:hover {
+	  background-position: -99.99% 0;
+	}
+
+	.profile {
+	grid-template-columns: repeat(7, 1fr);
+	}
+
+	.icon{
+	grid-column-start: 3;
+	grid-column-end: span 1;
+	max-width: 150%;
+	}
+
+	.about{
+	padding-left: 135px;
+	grid-column-start: 4;
+	grid-column-end: span 1;
+	}
+}

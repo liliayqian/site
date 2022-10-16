@@ -1,0 +1,18 @@
+.writing {
+	text-align:  center;
+}
+
+.heading {
+	margin-bottom: .25em;
+	padding: .5em;
+}
+
+ul.no-bullets {
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
+}
+
+a:link{
+	color: black;
+}
