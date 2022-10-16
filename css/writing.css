@@ -1,10 +1,10 @@
 .writing {
-	text-align:  center;
+	text-align:center;
 }
 
 .heading {
-	margin-bottom: .25em;
-	padding: .5em;
+	margin: .25em;
+	padding: .25em;
 }
 
 ul.no-bullets {
@@ -13,6 +13,19 @@ ul.no-bullets {
   margin: 0; /* Remove margins */
 }
 
-a:link{
+/*pub links*/
+.pub-link:link{
 	color: black;
+  text-decoration: none;
+}
+
+.pub-link:visited {
+	color: rebeccapurple;
+}
+
+/*for medium-sized screens and bigger, on hover*/
+@media (min-width: 35em) {
+	.pub-link:hover {
+		opacity: 0.3;
+	}
 }

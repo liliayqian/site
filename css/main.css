@@ -66,6 +66,16 @@ nav li a:hover{
 		grid-template-columns: repeat(1, 1fr);
 		grid-column-gap: 2.5%;
 	}
+
+	.profile a{
+		color: black;
+		font-weight: bold;
+	}
+
+	.profile a:hover {
+		text-decoration: none;
+		opacity: 0.3;
+	}
 	
 	.icon{
 		max-width: 50%;
@@ -79,19 +89,12 @@ nav li a:hover{
 	.about p, h1{
 		text-align: center;
 	}
+}
 
 /*medium width*/
 @media (min-width: 35em) {
 	.profile {
 		grid-template-columns: repeat(4, 1fr);
-	}
-	.profile a{
-		color: black;
-		font-weight: bold;
-	}
-	.profile a:hover {
-		text-decoration: none;
-		opacity: 0.3;
 	}
 	.icon{
 		max-width: 110%;
@@ -132,6 +135,7 @@ nav li a:hover{
 	  from, to { border-color: transparent }
 	  50% { border-color: #FFDE0C }
 	}
+}
 
 /*large screens*/
 @media screen and (min-width: 80em) {
