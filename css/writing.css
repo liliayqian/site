@@ -22,8 +22,10 @@ ul.no-bullets {
 /*mobile*/
 @media (min-width: 0em) {
 	.pub-list {
-		padding: 25px;
-		margin: 10px;
+		padding-left: 25px;
+		padding-right:25px;
+		margin-left: 10px;
+		margin-right: 10px;
 	}
 }
 
