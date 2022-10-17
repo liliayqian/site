@@ -2,11 +2,6 @@
 	text-align:center;
 }
 
-.heading {
-	margin: .25em;
-	padding: .25em;
-}
-
 ul.no-bullets {
   list-style-type: none; /* Remove bullets */
   padding: 0; /* Remove padding */
@@ -16,14 +11,18 @@ ul.no-bullets {
 /*pub links*/
 .pub-link:link{
 	color: black;
-  text-decoration: none;
+  	text-decoration: none;
 }
 
-.pub-link:visited {
-	color: rebeccapurple;
+/*mobile*/
+@media (min-width: 0em) {
+	.pub-list {
+		padding: 25px;
+		margin: 10px;
+	}
 }
 
-/*for medium-sized screens and bigger, on hover*/
+/*medium sized screens*/
 @media (min-width: 35em) {
 	.pub-link:hover {
 		opacity: 0.3;
