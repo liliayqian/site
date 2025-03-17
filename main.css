@@ -82,3 +82,16 @@ main ul li {
     margin: 0 auto; /* Centers it */
     border-bottom: 3px double black;
 }
+
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column; /* Stacks links vertically */
+        align-items: center; /* Keeps items centered */
+        gap: 10px;  /* Reduces gap for better spacing */
+    }
+    
+    /* Increase spacing between nav and content when stacked */
+    main {
+        padding-top: 200px;
+    }
+}
