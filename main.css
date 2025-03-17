@@ -92,6 +92,6 @@ main ul li {
     
     /* Increase spacing between nav and content when stacked */
     main {
-        padding-top: 200px;
+        margin-top: 120px;
     }
 }
