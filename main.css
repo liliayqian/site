@@ -7,11 +7,11 @@ body, h1, h2, p, ul {
 }
 
 body {
-    font-family: "Inter", sans-serif;
+    font-family: "Times", serif;
     font-weight: normal;
 }
 
-ul {
+nav ul {
     list-style: none;
 }
 
@@ -20,15 +20,10 @@ main {
     margin: 0 auto;
     padding: 20px;
     padding-top: 180px;
-    text-align: left;
 }
 
 main h2 {
     padding: 10px;
-}
-
-main p {
-    text-align: left;
 }
 
 header {
@@ -45,13 +40,16 @@ header h1 {
 }
 
 nav {
-    padding: 5px 0;
+    padding: 10px 0;
 }
 
 nav ul {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 1em;
+    padding: 0;
+    margin: 0;
 }
 
 nav a {
@@ -59,8 +57,28 @@ nav a {
     text-decoration: none;
     font-weight: normal;
     padding: 5px 10px;
+    white-space: nowrap;
 }
 
 nav a.active {
     font-weight: bold;
+}
+
+img {
+    max-width: 80%;
+    height: auto;
+}
+
+main ul {
+    padding: 0 5em;
+}
+main ul li {
+    padding: 5px;
+    text-align: left;
+}
+
+.nav-container {
+    max-width: 80%; /* Adjust to control border width */
+    margin: 0 auto; /* Centers it */
+    border-bottom: 3px double black;
 }
