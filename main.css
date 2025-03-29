@@ -75,7 +75,8 @@ main ul {
 }
 main ul li {
     padding: 5px;
-    text-align: left;
+    list-style: none;
+    text-align: center;
 }
 
 .nav-container {
@@ -93,6 +94,6 @@ main ul li {
     
     /* Increase spacing between nav and content when stacked */
     main {
-        margin-top: 130px;
+        margin-top: 140px;
     }
 }
