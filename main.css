@@ -76,7 +76,7 @@ main ul {
 main ul li {
     padding: 5px;
     list-style: none;
-    text-align: center;
+    text-align: left;
 }
 
 .nav-container {
