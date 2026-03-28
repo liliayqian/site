@@ -34,6 +34,7 @@ header {
     left: 0;
     background: white;
     padding: 50px 0;
+    z-index: 1000;
 }
 
 header h1 {
@@ -80,20 +81,106 @@ main ul li {
 }
 
 .nav-container {
-    max-width: 80%; /* Adjust to control border width */
-    margin: 0 auto; /* Centers it */
+    max-width: 80%;
+    margin: 0 auto;
     border-bottom: 3px double black;
+    position: relative;
 }
 
+/* ── Hamburger button ── */
+.hamburger {
+    display: none; /* hidden on desktop */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: black;
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    transform-origin: center;
+}
+
+/* Animate hamburger → X when open */
+.hamburger.is-open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.hamburger.is-open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+.hamburger.is-open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── Responsive: small screens ── */
 @media (max-width: 600px) {
-    nav ul {
-        flex-direction: column; /* Stacks links vertically */
-        align-items: center; /* Keeps items centered */
-        gap: 10px;  /* Reduces gap for better spacing */
+    header {
+        padding: 20px 0 0 0;
     }
-    
-    /* Increase spacing between nav and content when stacked */
+
     main {
-        margin-top: 140px;
+        padding-top: 120px;
+    }
+
+    .nav-container {
+        border-bottom: none; /* border moves to nav when open */
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    /* Nav is hidden by default on mobile */
+    #main-nav {
+        display: none;
+        width: 100%;
+        background: white;
+        border-top: 3px double black;
+    }
+
+    /* Nav is visible when toggled open */
+    #main-nav.nav-open {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        padding: 10px 0;
+    }
+
+    nav ul li {
+        width: 100%;
+    }
+
+    nav a {
+        display: block;
+        padding: 10px 0;
+        width: 100%;
+    }
+
+    /* Keep the border below the header title on mobile */
+    header h1 {
+        padding-bottom: 14px;
+        border-bottom: 3px double black;
+        max-width: 80%;
+        margin: 0 auto 0 auto;
     }
 }
