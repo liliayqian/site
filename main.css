@@ -141,6 +141,17 @@ main ul li {
         display: none;
     }
 
+    /* Tighter horizontal padding on mobile */
+    main {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    main ul {
+        padding-left: 1.5em;
+        padding-right: 1.5em;
+    }
+
     /* Hamburger button — absolute so it doesn't shift the centered title */
     .hamburger {
         display: flex;
