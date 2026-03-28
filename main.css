@@ -87,100 +87,125 @@ main ul li {
     position: relative;
 }
 
-/* ── Hamburger button ── */
+/* ── Hamburger button (hidden on desktop) ── */
 .hamburger {
-    display: none; /* hidden on desktop */
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    width: 36px;
-    height: 36px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 4px;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    display: none;
 }
 
-.hamburger span {
-    display: block;
-    width: 22px;
-    height: 2px;
-    background: black;
-    border-radius: 2px;
-    transition: transform 0.25s ease, opacity 0.25s ease;
-    transform-origin: center;
-}
-
-/* Animate hamburger → X when open */
-.hamburger.is-open span:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
-}
-.hamburger.is-open span:nth-child(2) {
-    opacity: 0;
-    transform: scaleX(0);
-}
-.hamburger.is-open span:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
+/* Fullscreen overlay (hidden by default) */
+#mobile-menu-overlay {
+    display: none;
 }
 
 /* ── Responsive: small screens ── */
 @media (max-width: 600px) {
     header {
-        padding: 20px 0 0 0;
+        padding: 0;
+    }
+
+    /* Title + hamburger on one row */
+    .header-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 80%;
+        margin: 0 auto;
+        padding: 16px 0;
+    }
+
+    header h1 {
+        margin: 0;
+    }
+
+    /* Desktop nav hidden on mobile */
+    .nav-container {
+        display: none;
     }
 
     main {
-        padding-top: 120px;
+        padding-top: 80px;
     }
 
-    .nav-container {
-        border-bottom: none; /* border moves to nav when open */
-    }
-
+    /* Hamburger button */
     .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        width: 36px;
+        height: 36px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 4px;
+        flex-shrink: 0;
+    }
+
+    .hamburger span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: black;
+        border-radius: 2px;
+    }
+
+    /* Fullscreen overlay */
+    #mobile-menu-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: white;
+        z-index: 2000;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #mobile-menu-overlay.is-open {
         display: flex;
     }
 
-    /* Nav is hidden by default on mobile */
-    #main-nav {
-        display: none;
-        width: 100%;
-        background: white;
-        border-top: 3px double black;
+    /* ✕ close button — top right of overlay */
+    .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 10%;
+        width: 36px;
+        height: 36px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    /* Nav is visible when toggled open */
-    #main-nav.nav-open {
+    .close-btn span {
         display: block;
+        position: absolute;
+        width: 22px;
+        height: 2px;
+        background: black;
+        border-radius: 2px;
     }
 
-    nav ul {
+    .close-btn span:nth-child(1) { transform: rotate(45deg); }
+    .close-btn span:nth-child(2) { transform: rotate(-45deg); }
+
+    /* Overlay nav links */
+    #mobile-menu-overlay nav ul {
         flex-direction: column;
         align-items: center;
-        gap: 0;
-        padding: 10px 0;
+        gap: 0.5em;
+        list-style: none;
+        padding: 0;
+        margin: 0;
     }
 
-    nav ul li {
-        width: 100%;
-    }
-
-    nav a {
+    #mobile-menu-overlay nav a {
+        font-size: 1.4em;
+        padding: 12px 20px;
         display: block;
-        padding: 10px 0;
-        width: 100%;
-    }
-
-    /* Keep the border below the header title on mobile */
-    header h1 {
-        padding-bottom: 14px;
-        border-bottom: 3px double black;
-        max-width: 80%;
-        margin: 0 auto 0 auto;
     }
 }
