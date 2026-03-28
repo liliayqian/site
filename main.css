@@ -20,7 +20,7 @@ main {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    padding-top: 180px;
+    padding-top: 180px; /* fallback; overridden dynamically by nav.js */
 }
 
 main h2 {
@@ -39,6 +39,11 @@ header {
 
 header h1 {
     margin-bottom: 10px;
+}
+
+header h1 a {
+    color: inherit;
+    text-decoration: none;
 }
 
 nav {
@@ -103,11 +108,12 @@ main ul li {
         padding: 0;
     }
 
-    /* Title + hamburger on one row */
+    /* Title + hamburger on one row, title centered */
     .header-bar {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
+        position: relative;
         max-width: 80%;
         margin: 0 auto;
         padding: 16px 0;
@@ -115,18 +121,27 @@ main ul li {
 
     header h1 {
         margin: 0;
+        text-align: center;
+        flex: 1;
     }
 
-    /* Desktop nav hidden on mobile */
+    /* Show the double line on mobile, but hide the desktop nav links */
     .nav-container {
+        max-width: 80%;
+        margin: 0 auto;
+        border-bottom: 3px double black;
+    }
+
+    #main-nav {
         display: none;
     }
 
-    main {
-        padding-top: 80px;
+    /* Hide header (title + double line) when overlay is open */
+    body.menu-open header {
+        display: none;
     }
 
-    /* Hamburger button */
+    /* Hamburger button — absolute so it doesn't shift the centered title */
     .hamburger {
         display: flex;
         flex-direction: column;
@@ -139,7 +154,8 @@ main ul li {
         border: none;
         cursor: pointer;
         padding: 4px;
-        flex-shrink: 0;
+        position: absolute;
+        right: 0;
     }
 
     .hamburger span {

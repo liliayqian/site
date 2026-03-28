@@ -21,17 +21,30 @@ document.addEventListener("DOMContentLoaded", function () {
             const overlay   = document.getElementById("mobile-menu-overlay");
             const closeBtn  = document.getElementById("close-menu-btn");
 
+            // Keep main padding-top in sync with the actual header height
+            function updateMainPadding() {
+                const headerEl = document.querySelector("header");
+                const mainEl   = document.querySelector("main");
+                if (headerEl && mainEl) {
+                    mainEl.style.paddingTop = headerEl.offsetHeight + 20 + "px";
+                }
+            }
+            updateMainPadding();
+            window.addEventListener("resize", updateMainPadding);
+
             function openMenu() {
                 overlay.classList.add("is-open");
                 overlay.setAttribute("aria-hidden", "false");
                 hamburger.setAttribute("aria-expanded", "true");
-                document.body.style.overflow = "hidden"; // prevent background scroll
+                document.body.classList.add("menu-open");
+                document.body.style.overflow = "hidden";
             }
 
             function closeMenu() {
                 overlay.classList.remove("is-open");
                 overlay.setAttribute("aria-hidden", "true");
                 hamburger.setAttribute("aria-expanded", "false");
+                document.body.classList.remove("menu-open");
                 document.body.style.overflow = "";
             }
 
