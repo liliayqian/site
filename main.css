@@ -151,19 +151,30 @@ main ul li {
         display: none;
     }
 
-    /* Tighter horizontal padding on mobile */
+    /* Tighter horizontal padding on mobile and align with nav line width */
     main {
+        max-width: 80%;
         padding-left: 8px;
         padding-right: 8px;
     }
 
     main p {
-        padding:1em
+        padding: 1em;
     }
 
     main ul {
         padding-left: 1.5em;
         padding-right: 1.5em;
+    }
+
+    /* Make images align to same width boundaries as text on small screens */
+    img {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     /* Hamburger button — absolute so it doesn't shift the centered title */
