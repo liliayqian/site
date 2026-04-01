@@ -10,6 +10,7 @@ body {
     font-family: "Crimson Text", serif;
     /* font-family: "Times", serif; */
     font-weight: normal;
+    font-size:18px;
 }
 
 nav ul {
@@ -21,6 +22,7 @@ main {
     margin: 0 auto;
     padding: 20px;
     padding-top: 180px; /* fallback; overridden dynamically by nav.js */
+    line-height: 1.8;
 }
 
 main h2 {
@@ -145,6 +147,11 @@ main ul li {
     main {
         padding-left: 8px;
         padding-right: 8px;
+    }
+
+    main p {
+        padding-left: 1em;
+        padding-right: 1em;
     }
 
     main ul {
