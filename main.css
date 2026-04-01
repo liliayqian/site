@@ -162,10 +162,12 @@ main ul li {
         padding: 1em;
     }
 
+    /* 
     main ul {
         padding-left: 1.5em;
         padding-right: 1.5em;
-    }
+    } 
+    */
 
     /* Make images align to same width boundaries as text on small screens */
     img {
