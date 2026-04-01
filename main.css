@@ -6,6 +6,10 @@ body, h1, h2, p, ul {
     color: black;
 }
 
+p {
+    text-align: justify;
+}
+
 body {
     font-family: "Crimson Text", serif;
     /* font-family: "Times", serif; */
@@ -106,8 +110,8 @@ main ul li {
 @media (max-width: 600px) {
     
     body {
-        font-size: 18px;
-        line-height: 1.8;
+        font-size: 16px;
+        line-height: 1.4;
     }
     
     header {
