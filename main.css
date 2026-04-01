@@ -179,12 +179,6 @@ main ul li {
     main ul {
         padding-left: 0;
         padding-right: 0;
-        margin: 0 0 1em;
-    }
-
-    main ul li {
-        padding: 0.25em 0;
-        padding-left: 1em; /* keep indentation for content but within same main width */
     }
 
     /* Make images align to same width boundaries as text on small screens */
