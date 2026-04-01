@@ -1,3 +1,7 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body, h1, h2, p, ul {
     margin: 0;
     padding: 0;
@@ -154,20 +158,34 @@ main ul li {
     /* Tighter horizontal padding on mobile and align with nav line width */
     main {
         max-width: 80%;
-        padding-left: 8px;
-        padding-right: 8px;
+        width: 100%;
+        padding: 0 8px;
+        margin: 0 auto;
+    }
+
+    main p,
+    main ul,
+    main img,
+    main video,
+    main iframe {
+        width: 100%;
+        margin: 0;
     }
 
     main p {
-        padding: 1em;
+        padding: 1em 0;
     }
 
-    
     main ul {
-        padding-left: 1em;
-        padding-right: 1em;
-    } 
-   
+        padding-left: 0;
+        padding-right: 0;
+        margin: 0 0 1em;
+    }
+
+    main ul li {
+        padding: 0.25em 0;
+        padding-left: 1em; /* keep indentation for content but within same main width */
+    }
 
     /* Make images align to same width boundaries as text on small screens */
     img {
